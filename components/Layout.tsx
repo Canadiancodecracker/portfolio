@@ -1,15 +1,15 @@
 
 import React, { useState, useEffect } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
-import { 
-  Menu, 
-  X, 
-  Moon, 
-  Sun, 
-  Github, 
-  Linkedin, 
-  Mail, 
-  FileText 
+import {
+  Menu,
+  X,
+  Moon,
+  Sun,
+  Github,
+  Linkedin,
+  Mail,
+  FileText
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { portfolioData } from '../content/profile.ts';
@@ -67,8 +67,7 @@ const Navbar: React.FC = () => {
                 key={link.path}
                 to={link.path}
                 className={({ isActive }) =>
-                  `text-sm font-medium transition-colors hover:text-blue-600 dark:hover:text-blue-400 ${
-                    isActive ? 'text-blue-600 dark:text-blue-400' : 'text-gray-600 dark:text-gray-300'
+                  `text-sm font-medium transition-colors hover:text-blue-600 dark:hover:text-blue-400 ${isActive ? 'text-blue-600 dark:text-blue-400' : 'text-gray-600 dark:text-gray-300'
                   }`
                 }
               >
@@ -82,8 +81,10 @@ const Navbar: React.FC = () => {
             >
               {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
             </button>
-            <a 
-              href="/cv.pdf" 
+            <a
+              href="/cv.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center space-x-1 px-4 py-2 bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 rounded-full text-xs font-semibold hover:opacity-90 transition-opacity"
             >
               <FileText size={14} />
@@ -125,9 +126,8 @@ const Navbar: React.FC = () => {
                   to={link.path}
                   onClick={() => setIsOpen(false)}
                   className={({ isActive }) =>
-                    `block px-3 py-3 rounded-lg text-base font-medium transition-colors ${
-                      isActive 
-                      ? 'bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400' 
+                    `block px-3 py-3 rounded-lg text-base font-medium transition-colors ${isActive
+                      ? 'bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400'
                       : 'text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800'
                     }`
                   }
@@ -135,8 +135,10 @@ const Navbar: React.FC = () => {
                   {link.name}
                 </NavLink>
               ))}
-              <a 
-                href="/cv.pdf" 
+              <a
+                href="/cv.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="block px-3 py-3 text-center bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 rounded-lg text-sm font-semibold"
               >
                 Download CV
